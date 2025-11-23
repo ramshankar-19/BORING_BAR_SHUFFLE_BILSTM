@@ -46,28 +46,17 @@ Unlike traditional time-series approaches, this system converts raw sensor signa
 
 ## 📊 Model Architecture
 
-Input (256×256×3 RGB Images)
-↓
-Conv2D + BatchNorm + LeakyReLU
-↓
-MaxPooling
-↓
-[Shuffle Unit × 3]
-├─ Group Convolution (1×1)
-├─ Channel Shuffle
-├─ Group Convolution (3×3, stride=2)
-├─ Group Convolution (1×1)
-└─ Residual Connection
-↓
-Reshape (flatten spatial dims)
-↓
-Bidirectional LSTM (128 units)
-↓
-Dense (128, ReLU)
-↓
-Dense (3, Softmax)
-↓
-Output: [Stable, Transition, Violent]
+- **Input**: 256×256×3 RGB images
+- **Feature extractor**: Conv2D → BatchNorm → LeakyReLU → MaxPool → Shuffle Units
+- **Temporal head**: Bidirectional LSTM (128 units)
+- **Classifier**: Dense(128, ReLU) → Dense(3, Softmax)
+- **Parameters**: ~1.9M
+
+
+## Classes
+- Stable
+- Transition
+- Violent
 
 
 **Total Parameters**: ~1.9M  
@@ -320,3 +309,4 @@ For questions, issues, or collaboration opportunities:
 **Built with ❤️ for intelligent manufacturing**
 
 *Last Updated: November 2025*
+

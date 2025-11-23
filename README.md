@@ -82,29 +82,30 @@ Unlike traditional time-series approaches, this system converts raw sensor signa
 BORING_BAR_SHUFFLE_BILSTM/
 │
 ├── data/
-│ ├── raw/ # Raw sensor data
-│ └── processed/ # Preprocessed 256×256×3 images
+│   ├── raw/                      # Raw sensor data
+│   └── processed/                # Preprocessed 256×256×3 images
 │
 ├── models/
-│ ├── checkpoints/ # Training checkpoints
-│ └── best_shuffle_bilstm.keras # Best trained model
+│   ├── checkpoints/              # Training checkpoints
+│   └── best_shuffle_bilstm.keras # Best trained model
 │
 ├── results/
-│ ├── confusion_matrix.png # Evaluation metrics
-│ ├── training_history.png # Loss/accuracy curves
-│ └── sample_images.png # Example SPWVD images
+│   ├── confusion_matrix.png      # Evaluation metrics
+│   └── training_history.png      # Loss/accuracy curves
+│
+├── sample_images.png             # Example SPWVD images
 │
 ├── src/
-│ ├── preprocess.py # Wavelet denoising + SPWVD
-│ ├── dataset_builder.py # Image dataset generator
-│ ├── shuffle_bilstm.py # Model architecture
-│ ├── train.py # Training pipeline
-│ └── eval.py # Evaluation script
+│   ├── preprocess.py             # Wavelet denoising + SPWVD
+│   ├── dataset_builder.py        # Image dataset generator
+│   ├── shuffle_bilstm.py         # Model architecture
+│   ├── train.py                  # Training pipeline
+│   └── eval.py                   # Evaluation script
 │
 ├── requirements.txt
-├── .gitignore
 ├── LICENSE
-└── README.md
+├── README.md
+└── .gitignore
 
 
 ---
@@ -309,4 +310,5 @@ For questions, issues, or collaboration opportunities:
 **Built with ❤️ for intelligent manufacturing**
 
 *Last Updated: November 2025*
+
 
